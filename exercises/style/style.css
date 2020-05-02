@@ -1,0 +1,268 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+.post-link {
+    text-decoration: none;
+}
+
+/* main body */
+
+.mainbody {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40% 50% 10%;
+}
+
+/* profile header */
+
+.profile-container {
+    grid-column: 1 / -1 ;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/NodeJS/blog/exercises/assets/banner.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0 3px 3px grey;
+}
+
+/* * means everything in the container */
+/* bg is at the back, and will run after ::after */
+.profile-container > * {
+    z-index: 1;
+} 
+
+.profile-container::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(/NodeJS/blog/exercises/assets/profile.jpg);
+    background-size: cover;
+}
+
+.profile-name {
+    font-size: 3em;
+    font-weight: bold;
+    margin: 8px 0;
+    color: white;
+}
+
+.profile-message {
+    color: white;
+    font-size: 1.2em;
+}
+
+/* end of profile header */
+
+/* content */
+
+.content-container {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr;
+    margin-top: 20px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.content-container::-webkit-scrollbar {
+    display: none;
+  }
+
+.post-container {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    padding: 0 16px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    margin: 20px 0;
+    max-width: 650px;
+    min-width: 650px;
+    display: flex;
+    border-radius: 12px;
+    border: 1px solid #eaecee70;
+    min-height: 200px;
+    overflow: hidden;
+    transition: all 0.25s linear;
+    cursor: pointer;
+}
+
+.content:hover {
+    transform: translate3d(0, -5px, 0);
+    box-shadow: 0 2rem 5rem 0 rgba(0,0,0,.1);
+}
+
+.content .blog-img {
+    flex-basis: 40%;
+    background-image: url(/NodeJS/blog/exercises/assets/profile.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.post-content {
+    display: flex;
+    flex-basis:60%;
+    flex-direction: column;
+    padding: 24px;
+    align-items: space-between;
+
+}
+
+.blog-date {
+    color: grey;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.blog-title {
+    font-size: 1.5em;
+    margin-top: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.blog-title h4 {
+    margin: 0;
+}
+
+.short-message {
+    margin-top: 4px;
+    color: #495057;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.4;
+    max-height: 65px;
+    overflow: hidden;
+}
+/* end of content */
+
+/* post button */
+.nav-button, .nav-post-button {
+    position: fixed;
+    bottom: 65px;
+    right: 50px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 50%;
+    background-color: #004186;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease;
+
+}
+
+.nav-button:hover {
+    background-color: #002349;
+}
+
+.nav-post-button:hover {
+    background-color: #002349;
+}
+/* end of post button */
+
+/* footer */
+
+footer {
+    grid-column: 1 / -1;
+    grid-row: 3 / -1;
+    background-color: #eaecee70;
+    color: #929eaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-size: 1.2em;
+
+
+}
+
+footer a {
+    text-decoration: none;
+    color: #929eaa;
+    transition: color 0.2s;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: black;
+
+}
+
+/* end of footer */
+
+/* mainbody end */
+
+/* post page */
+.detail-container {
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 1fr 1fr minmax(60%, auto);
+}
+
+.backButton {
+    grid-column:2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.navigation:hover {
+    background-color: #004186;
+}
+
+.navigation a:hover{
+    color: white;
+}
+
+.navigation {
+    border:1px solid #004186;
+    padding: 8px; 
+    border-radius: 5px;
+    transition: all 0.25s;
+    cursor:pointer;
+}
+
+.navigation a {
+    text-decoration: none;
+    color:#004186;
+    transition: all 0.25s;
+}
+
+
+/* end of post page */
