@@ -3,6 +3,14 @@ const app = express();
 const Post = require("./models/posts")
 const postsData = new Post();
 
+app.use((req,res,next)=>{
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    next();
+})//response from the server has been blocked, so we need to set a share with '*'
+//middleware will be used to set the share function
+
+app.use('/uploads', express.static('uploads'));
+//this function is to make the static folder publicly visible
 
 app.get('/api/posts', (req,res) => {
     res.status(200).send(postsData.get());

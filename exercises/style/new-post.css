@@ -1,8 +1,10 @@
 
+
 form > * {
     display: block;
     margin-top: 16px;
     font-size: 18px;
+    margin-left: 15px;
 }
 
 #form-post-title {
@@ -18,10 +20,12 @@ form > * {
 
 #form-post-content {
     width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 300px;
+    min-width: 95.5%;
+    max-width: 95.5%;
+    min-height: 250px;
 }
+
+
 
 #form-post-submit {
     background-color: #004186;

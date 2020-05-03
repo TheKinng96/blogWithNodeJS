@@ -124,7 +124,6 @@ body {
 
 .content .blog-img {
     flex-basis: 40%;
-    background-image: url(/NodeJS/blog/exercises/assets/profile.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -266,3 +265,21 @@ footer a:hover {
 
 
 /* end of post page */
+
+/* new post page */
+.newpost-container {
+    display: grid;
+    grid-template-columns: 1fr 80% 1fr;
+    grid-template-rows: 1fr 90%;
+}
+
+.form-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.imageline input{
+    font-size: 1em;
+}
+
+/* end of new post page */
