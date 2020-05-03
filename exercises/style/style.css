@@ -22,27 +22,30 @@ body {
 
 /* profile header */
 
-.profile-container {
+header {
     grid-column: 1 / -1 ;
     grid-row: 1 / 2;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(/NodeJS/blog/exercises/assets/banner.jpeg);
     background-position: center;
     background-size: cover;
     position: relative;
     box-shadow: 0 3px 3px grey;
 }
 
+.home-page header {
+    background-image: url(/NodeJS/blog/exercises/assets/banner.jpeg);
+}
+
 /* * means everything in the container */
 /* bg is at the back, and will run after ::after */
-.profile-container > * {
+header > * {
     z-index: 1;
 } 
 
-.profile-container::after {
+header::after {
     content:"";
     position: absolute;
     top: 0;
@@ -152,6 +155,10 @@ body {
 
 .blog-title h4 {
     margin: 0;
+}
+
+a.postLink {
+    text-decoration: none;
 }
 
 .short-message {

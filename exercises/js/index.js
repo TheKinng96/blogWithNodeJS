@@ -23,15 +23,18 @@ const buildPosts = (blogPosts) => {
         const postDate = new Date(parseInt(blogPost.added_date)).toDateString();
         //todatestring will convert time from string to string, parseInt convert num to str
         const postImage = `${API_BASE_URL}${blogPost.post_image}`;
+        const postLink = `/NodeJS/blog/exercises/post.html?id=${blogPost.id}`;
         blogPostsContent += `
-        <div class="content">
-            <div class="blog-img" style="background-image: url(${postImage})"></div>
-            <div class="post-content">
-                <div class="blog-date">${postDate}</div>
-                <div class="blog-title"><h4>${blogPost.title}</h4></div>
-                <div class="short-message">${blogPost.content}</div>
+        <a href="${postLink}" class="postLink">
+            <div class="content">
+                <div class="blog-img" style="background-image: url(${postImage})"></div>
+                <div class="post-content">
+                    <div class="blog-date">${postDate}</div>
+                    <div class="blog-title"><h4>${blogPost.title}</h4></div>
+                    <div class="short-message">${blogPost.content}</div>
+                </div>
             </div>
-        </div>
+        </a>
         `
     }
     document.querySelector(".blog-posts").innerHTML = blogPostsContent;
