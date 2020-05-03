@@ -21,6 +21,8 @@ const submitNewPost = () => {
         method: "POST",
         body:data
     }).then(()=>{
-        console.log("we are good")
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1000);
     })
 }
